@@ -49,7 +49,7 @@ elseif(empty($_GET['pass'])){
 
 else {
     
-    echo 'The user does exist ';
+    echo 'Bienvenue au Just CBD Shop';
     unset($_GET);
 }
 

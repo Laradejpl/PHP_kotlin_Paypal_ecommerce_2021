@@ -20,12 +20,14 @@ if(!empty($_GET['email'])){
 
     //echo'Enter your email';
 
+   $passhash  = password_hash($_GET['pass'], PASSWORD_DEFAULT);
+
 if ($emailResult->num_rows == 0) {
 
 
     $sqlcommand = $connection->prepare("insert into user_kotlin_app values (?,?,?,?)");
 
-    $sqlcommand->bind_param("isss",$_GET['id'],$_GET['email'],$_GET['username'],$_GET['pass']);
+    $sqlcommand->bind_param("isss",$_GET['id'],$_GET['email'],$_GET['username'], $passhash);
 
     $sqlcommand->execute();
 
@@ -33,6 +35,8 @@ if ($emailResult->num_rows == 0) {
     
     unset($_GET);
 
+}else {
+    echo 'a user with the same address already exists';
 }
 }
 
@@ -42,7 +46,7 @@ if ($emailResult->num_rows == 0) {
 
 else {
     
-    echo 'a user with the same address already exists ';
+    echo 'soit vide ou existe deja';
 }
 
 
