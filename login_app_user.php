@@ -50,7 +50,7 @@ elseif(empty($_GET['pass'])){
 else {
     
     echo 'Bienvenue au Just CBD Shop';
-    unset($_GET);
+    
 }
 
 
