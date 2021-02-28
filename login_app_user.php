@@ -20,7 +20,7 @@ if ($login_result->num_rows == 0 ) {
 
    
 
-    echo 'The user does not exist ';
+    echo 'The user does not exist';
 
     
 
